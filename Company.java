@@ -1,7 +1,7 @@
 import java.util.TreeMap;
 import java.util.Comparator;
 
-public class Company {
+    public class Company {
     public static void main(String[] args) {
         int salary = 100000;
 
@@ -17,11 +17,10 @@ public class Company {
             staff.put("TopManager "+i, topManager.getMonthSatary(salary));
         }
 
-
     }
 
-    public int salary_withdrawal (TreeMap staff,String V ){
-        int salary = (int) staff.get(V);
+    public int salary_withdrawal (String o1o2){
+        int salary = (int) staff.get(o1o2);
         return salary;
     }
 }
@@ -37,7 +36,7 @@ class Manager{
 
     }
 }
-class TopManager {
+ class TopManager {
 
     public int getMonthSatary (int salary) {
         int company_income = (int) (Math.random() * (20  - 5) + 5);
@@ -51,13 +50,14 @@ class TopManager {
     }
 }
 
-class StaffComparator implements Comparator<Company> {
+class StaffComparator implements Comparator<String> {
 
-    public int compare(Company o1, Company o2) {
-        if(o1.salary_withdrawal()>o2.salary_withdrawal()){
+    public int compare(String o1, String o2) {
+        Company company = new Company();
+        if(company.salary_withdrawal(o1)>company.salary_withdrawal(o2)){
             return 1;
         }
-        if(o1.salary_withdrawal()<o2.salary_withdrawal()){
+        if(company.salary_withdrawal(o1)<company.salary_withdrawal(o2)){
             return -1;
         }
         return 0;

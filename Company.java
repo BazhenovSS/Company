@@ -2,10 +2,10 @@ import java.util.TreeMap;
 import java.util.Comparator;
 
     public class Company {
+        static TreeMap <String, Integer> staff = new TreeMap<>(new StaffComparator());
+        
     public static void main(String[] args) {
-        int salary = 100000;
-
-        TreeMap <String, Integer> staff = new TreeMap<>(new StaffComparator());
+         int salary = 100000;
 
         Manager manager = new Manager();
         TopManager topManager = new TopManager();

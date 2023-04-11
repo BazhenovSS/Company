@@ -1,12 +1,10 @@
-import SkilBox.Comparator;
-
 import java.util.TreeMap;
 
 public class Company {
     public static void main(String[] args) {
         int salary = 100000;
 
-        TreeMap <String, Integer> staff = new TreeMap<>(new SkilBox.StaffComparator());
+        TreeMap <String, Integer> staff = new TreeMap<>(new StaffComparator());
 
         SkilBox.Manager manager = new SkilBox.Manager();
         SkilBox.TopManager topManager = new SkilBox.TopManager();
@@ -52,7 +50,7 @@ class TopManager {
     }
 }
 
-class StaffComparator implements Comparator<SkilBox.Company> {
+class StaffComparator implements Comparator<Company> {
 
     public int compare(SkilBox.Company o1, SkilBox.Company o2) {
         if(o1.salary_withdrawal()>o2.salary_withdrawal()){

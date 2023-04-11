@@ -3,7 +3,7 @@ import java.util.Comparator;
 
     public class Company {
         static TreeMap <String, Integer> staff = new TreeMap<>(new StaffComparator());
-        
+
     public static void main(String[] args) {
          int salary = 100000;
 

@@ -1,4 +1,5 @@
 import java.util.TreeMap;
+import java.util.Comparator;
 
 public class Company {
     public static void main(String[] args) {
@@ -6,8 +7,8 @@ public class Company {
 
         TreeMap <String, Integer> staff = new TreeMap<>(new StaffComparator());
 
-        SkilBox.Manager manager = new SkilBox.Manager();
-        SkilBox.TopManager topManager = new SkilBox.TopManager();
+        Manager manager = new Manager();
+        TopManager topManager = new TopManager();
 
         for(int i = 1;i < 81;i++){
             staff.put("manager "+i, manager.getMonthSatary(salary));
@@ -52,7 +53,7 @@ class TopManager {
 
 class StaffComparator implements Comparator<Company> {
 
-    public int compare(SkilBox.Company o1, SkilBox.Company o2) {
+    public int compare(Company o1, Company o2) {
         if(o1.salary_withdrawal()>o2.salary_withdrawal()){
             return 1;
         }
